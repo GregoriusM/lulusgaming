@@ -9,7 +9,17 @@
         android:id="@+id/homeFragment"
         android:name="com.ubaya.lulusgaming.HomeFragment"
         android:label="Home Screen"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionWhatFragment"
+            app:destination="@id/itemWhat" />
+        <action
+            android:id="@+id/actionWhoFragment"
+            app:destination="@id/itemWho" />
+        <action
+            android:id="@+id/actionOurFragment"
+            app:destination="@id/itemOur" />
+    </fragment>
     <fragment
         android:id="@+id/achievementFragment"
         android:name="com.ubaya.lulusgaming.AchievementFragment"
@@ -17,7 +27,7 @@
         tools:layout="@layout/fragment_achievement" >
         <action
             android:id="@+id/action_achievementFragment_to_whatFragment"
-            app:destination="@id/whatFragment" />
+            app:destination="@id/itemWhat" />
     </fragment>
     <fragment
         android:id="@+id/membersFragment"
@@ -29,10 +39,10 @@
             app:destination="@id/teamsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/ourFragment"
+        android:id="@+id/itemOur"
         android:name="com.ubaya.lulusgaming.OurFragment"
-        android:label="fragment_our"
-        tools:layout="@layout/fragment_our" >
+        android:label="Our Schedule"
+        tools:layout="@layout/fragment_our">
         <action
             android:id="@+id/actionScheduleFragment"
             app:destination="@id/scheduleFragment" />
@@ -44,7 +54,7 @@
         tools:layout="@layout/fragment_schedule" >
         <action
             android:id="@+id/action_scheduleFragment_to_ourFragment"
-            app:destination="@id/ourFragment" />
+            app:destination="@id/itemOur" />
     </fragment>
     <fragment
         android:id="@+id/teamsFragment"
@@ -56,13 +66,13 @@
             app:destination="@id/membersFragment" />
         <action
             android:id="@+id/action_teamsFragment_to_whatFragment"
-            app:destination="@id/whatFragment" />
+            app:destination="@id/itemWhat" />
     </fragment>
     <fragment
-        android:id="@+id/whatFragment"
+        android:id="@+id/itemWhat"
         android:name="com.ubaya.lulusgaming.WhatFragment"
-        android:label="fragment_what"
-        tools:layout="@layout/fragment_what" >
+        android:label="What We Play"
+        tools:layout="@layout/fragment_what">
         <action
             android:id="@+id/actionAchievementFragment"
             app:destination="@id/achievementFragment" />
@@ -71,8 +81,8 @@
             app:destination="@id/teamsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/whoFragment"
+        android:id="@+id/itemWho"
         android:name="com.ubaya.lulusgaming.WhoFragment"
-        android:label="fragment_who"
+        android:label="Who We Are"
         tools:layout="@layout/fragment_who" />
 </navigation>

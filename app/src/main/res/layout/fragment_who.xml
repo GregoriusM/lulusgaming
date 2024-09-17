@@ -5,10 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".WhoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:gravity="center"
+        android:text="Who We Are"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 </FrameLayout>
