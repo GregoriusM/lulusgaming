@@ -1,4 +1,4 @@
-package com.ubaya.lulusgaming
+package com.ubaya.lulusgaming.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
