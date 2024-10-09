@@ -8,3 +8,9 @@ data class Schedule(
     var description:String?,
     var team:String?
 )
+
+data class Game(
+    var name:String?,
+    var gameDesc:String?,
+    var photoUrl:String?
+)
