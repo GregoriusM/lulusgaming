@@ -47,10 +47,25 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="216dp"
                     android:fontFamily="sans-serif-black"
-                    android:text="Regional Qualifier - Valorant"
+                    android:gravity="center"
+                    android:text="Regional Qualifier -"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.136"
+                    app:layout_constraintHorizontal_bias="0.09"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtGameName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="216dp"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center"
+                    android:text="Valorant"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.688"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

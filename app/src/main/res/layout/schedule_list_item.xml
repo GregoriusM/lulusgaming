@@ -3,4 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="34dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="05 SEP"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEvent"
+        android:layout_width="146dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Qualifier - Valorant"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtGameName"
+        android:layout_width="97dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Valorant"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTeam"
+        android:layout_width="97dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Team A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
