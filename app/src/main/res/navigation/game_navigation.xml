@@ -17,8 +17,8 @@
             android:id="@+id/actionWhoFragment"
             app:destination="@id/itemWho" />
         <action
-            android:id="@+id/actionOurFragment"
-            app:destination="@id/itemOur" />
+            android:id="@+id/actionScheduleList"
+            app:destination="@id/scheduleListFragment" />
     </fragment>
     <fragment
         android:id="@+id/achievementFragment"
@@ -37,24 +37,6 @@
         <action
             android:id="@+id/action_membersFragment_to_teamsFragment"
             app:destination="@id/teamsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/itemOur"
-        android:name="com.ubaya.lulusgaming.view.OurFragment"
-        android:label="Our Schedule"
-        tools:layout="@layout/fragment_our">
-        <action
-            android:id="@+id/actionScheduleFragment"
-            app:destination="@id/scheduleFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/scheduleFragment"
-        android:name="com.ubaya.lulusgaming.view.ScheduleFragment"
-        android:label="fragment_schedule"
-        tools:layout="@layout/fragment_schedule" >
-        <action
-            android:id="@+id/action_scheduleFragment_to_ourFragment"
-            app:destination="@id/itemOur" />
     </fragment>
     <fragment
         android:id="@+id/teamsFragment"
@@ -85,4 +67,22 @@
         android:name="com.ubaya.lulusgaming.view.WhoFragment"
         android:label="Who We Are"
         tools:layout="@layout/fragment_who" />
+    <fragment
+        android:id="@+id/scheduleListFragment"
+        android:name="com.ubaya.lulusgaming.view.ScheduleListFragment"
+        android:label="fragment_schedule_list"
+        tools:layout="@layout/fragment_schedule_list" >
+        <action
+            android:id="@+id/actionScheduleDetail"
+            app:destination="@id/scheduleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleDetailFragment"
+        android:name="com.ubaya.lulusgaming.view.ScheduleDetailFragment"
+        android:label="fragment_schedule_detail"
+        tools:layout="@layout/fragment_schedule_detail" >
+        <action
+            android:id="@+id/actionScheduleListe"
+            app:destination="@id/scheduleListFragment" />
+    </fragment>
 </navigation>
