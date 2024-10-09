@@ -17,7 +17,7 @@
         android:title="Who We Are"
         app:showAsAction="always" />
     <item
-        android:id="@+id/itemOur"
+        android:id="@+id/itemSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/baseline_calendar_month_24"

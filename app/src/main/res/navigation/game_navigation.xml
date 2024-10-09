@@ -18,7 +18,7 @@
             app:destination="@id/itemWho" />
         <action
             android:id="@+id/actionScheduleList"
-            app:destination="@id/scheduleListFragment" />
+            app:destination="@id/itemSchedule" />
     </fragment>
     <fragment
         android:id="@+id/achievementFragment"
@@ -68,10 +68,10 @@
         android:label="Who We Are"
         tools:layout="@layout/fragment_who" />
     <fragment
-        android:id="@+id/scheduleListFragment"
+        android:id="@+id/itemSchedule"
         android:name="com.ubaya.lulusgaming.view.ScheduleListFragment"
-        android:label="fragment_schedule_list"
-        tools:layout="@layout/fragment_schedule_list" >
+        android:label="Our Schedule"
+        tools:layout="@layout/fragment_schedule_list">
         <action
             android:id="@+id/actionScheduleDetail"
             app:destination="@id/scheduleDetailFragment" />
@@ -83,6 +83,6 @@
         tools:layout="@layout/fragment_schedule_detail" >
         <action
             android:id="@+id/actionScheduleListe"
-            app:destination="@id/scheduleListFragment" />
+            app:destination="@id/itemSchedule" />
     </fragment>
 </navigation>
