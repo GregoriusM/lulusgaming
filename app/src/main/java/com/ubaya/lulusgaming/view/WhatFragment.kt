@@ -25,7 +25,7 @@ class WhatFragment : Fragment() {
         binding = FragmentWhatBinding.inflate(layoutInflater, container, false)
         return binding.root
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_what, container, false)
+        // return inflater.inflate(R.layout.fragment_what, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

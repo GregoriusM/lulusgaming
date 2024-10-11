@@ -2,6 +2,7 @@ package com.ubaya.lulusgaming.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.ubaya.lulusgaming.databinding.WhatListItemBinding
@@ -26,6 +27,11 @@ class WhatListAdapter(val whatList: ArrayList<Game>):RecyclerView.Adapter<WhatLi
             .load(whatList[position].photoUrl)
             .into(holder.binding.imageView)
 
+        holder.binding.btnAchievement.setOnClickListener {
+            val action = WhatFragmentDirections.actionAchievementFragment(whatList[position])
+            it.findNavController().navigate(action)
+
+        }
 
 
     }

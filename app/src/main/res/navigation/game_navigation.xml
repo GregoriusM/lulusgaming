@@ -23,11 +23,15 @@
     <fragment
         android:id="@+id/achievementFragment"
         android:name="com.ubaya.lulusgaming.view.AchievementFragment"
-        android:label="fragment_achievement"
-        tools:layout="@layout/fragment_achievement" >
+        android:label="Achievement"
+        tools:layout="@layout/fragment_achievement">
         <action
             android:id="@+id/action_achievementFragment_to_whatFragment"
             app:destination="@id/itemWhat" />
+        <argument
+            android:name="selectedGame"
+            app:argType="com.ubaya.lulusgaming.model.Game" />
+
     </fragment>
     <fragment
         android:id="@+id/membersFragment"
@@ -53,14 +57,16 @@
     <fragment
         android:id="@+id/itemWhat"
         android:name="com.ubaya.lulusgaming.view.WhatFragment"
-        android:label="What We Play"
+        android:label="Lulus Gaming E-Sport"
         tools:layout="@layout/fragment_what">
         <action
             android:id="@+id/actionAchievementFragment"
             app:destination="@id/achievementFragment" />
+
         <action
             android:id="@+id/actionTeamsFragment"
             app:destination="@id/teamsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/itemWho"
