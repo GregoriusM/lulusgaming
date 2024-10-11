@@ -6,31 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".view.TeamsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:divider="@android:color/transparent"
+        android:showDividers="none">
 
         <ImageView
             android:id="@+id/imageViewTeams"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/valorant"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:src="@drawable/valorant" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="0dp"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTeamA"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
-            android:background="@android:color/white"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewTeams"
-        android:layout_marginTop="0dp" />
+            android:layout_margin="0dp"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="0dp"
+            android:text="TEAM A"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:cornerRadius="0dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTeamB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="0dp"
+            android:text="TEAM B"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:cornerRadius="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTeamC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="0dp"
+            android:text="TEAM C"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:cornerRadius="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+    </LinearLayout>
+
 </FrameLayout>

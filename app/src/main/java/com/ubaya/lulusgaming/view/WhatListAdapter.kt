@@ -30,7 +30,11 @@ class WhatListAdapter(val whatList: ArrayList<Game>):RecyclerView.Adapter<WhatLi
         holder.binding.btnAchievement.setOnClickListener {
             val action = WhatFragmentDirections.actionAchievementFragment(whatList[position])
             it.findNavController().navigate(action)
+        }
 
+        holder.binding.btnTeams.setOnClickListener {
+            val action = WhatFragmentDirections.actionTeamsFragment()
+            it.findNavController().navigate(action)
         }
 
 
