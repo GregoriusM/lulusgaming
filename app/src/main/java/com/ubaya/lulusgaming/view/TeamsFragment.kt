@@ -25,6 +25,10 @@ class TeamsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnTeamA.text = "TEAM A"
+        binding.btnTeamB.text = "TEAM B"
+        binding.btnTeamC.text = "TEAM C"
+
         binding.btnTeamA.setOnClickListener{
             val action = TeamsFragmentDirections.actionMembersFragment()
             it.findNavController().navigate(action)

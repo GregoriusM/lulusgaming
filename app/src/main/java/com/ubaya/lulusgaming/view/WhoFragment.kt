@@ -5,56 +5,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import com.squareup.picasso.Picasso
 import com.ubaya.lulusgaming.R
+import com.ubaya.lulusgaming.databinding.FragmentWhoBinding
+import com.ubaya.lulusgaming.viewmodel.WhoViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [WhoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class WhoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentWhoBinding
+    private val whoViewModel : WhoViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentWhoBinding.inflate(inflater, container, false)
+        return binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_who, container, false)
+//        return inflater.inflate(R.layout.fragment_who, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment WhoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            WhoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.txtDeskripsi.text = "Lulus Gaming E-Sport merupakan suatu tim yang terdiri dari 2 orang mahasiswa bernama Gregorius Mario dan Brian Owen. " +
+                "Mereka berdua ialah Mahasiswa Teknik Informatika Universitas Surabaya (UBAYA)."
+
+        Picasso.get()
+            .load(R.drawable.teams)
+            .into(binding.imageViewTeams)
+
+        binding.btnLike.text = "${whoViewModel.like}"
+
+        binding.btnLike.setOnClickListener{
+            whoViewModel.like++
+            binding.btnLike.text = "${whoViewModel.like}"
+        }
     }
+
 }

@@ -19,13 +19,13 @@
             android:src="@drawable/valorant" />
 
         <TextView
-            android:id="@+id/txtTeamAName"
+            android:id="@+id/txtTeamNameMembers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="24sp"
             android:paddingTop="16sp"
             android:paddingBottom="16sp"
-            android:text="TEAM A"
+            android:text="Nama Team"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/capt"
+                android:src="@drawable/pic"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
             <LinearLayout
@@ -58,7 +58,7 @@
                     android:id="@+id/playerName1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Captain America"
+                    android:text="Nama Player 1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -66,7 +66,7 @@
                     android:id="@+id/playerRole1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Role: Duelist"
+                    android:text="Role Player 1"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
@@ -83,7 +83,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/ironman"
+                android:src="@drawable/pic"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
             <LinearLayout
@@ -95,7 +95,7 @@
                     android:id="@+id/playerName2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ironman"
+                    android:text="Nama Player 2"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                     android:id="@+id/playerRole2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Role: Controller"
+                    android:text="Role Player 2"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
@@ -120,7 +120,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/strange"
+                android:src="@drawable/pic"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
             <LinearLayout
@@ -132,7 +132,7 @@
                     android:id="@+id/playerName3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dr. Strange"
+                    android:text="Nama Player 3"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -140,7 +140,7 @@
                     android:id="@+id/playerRole3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Role: Sentinel"
+                    android:text="Role Player 3"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
