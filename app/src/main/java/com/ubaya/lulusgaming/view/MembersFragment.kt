@@ -26,6 +26,10 @@ class MembersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Picasso.get()
+            .load(R.drawable.valorant)
+            .into(binding.imageViewTeams)
+
         binding.txtTeamNameMembers.text = "TEAM A"
 
         binding.playerName1.text = "Captain America"

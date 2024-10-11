@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import com.squareup.picasso.Picasso
 import com.ubaya.lulusgaming.R
 import com.ubaya.lulusgaming.databinding.FragmentTeamsBinding
 
@@ -24,6 +25,10 @@ class TeamsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Picasso.get()
+            .load(R.drawable.valorant)
+            .into(binding.imageViewTeams)
 
         binding.btnTeamA.text = "TEAM A"
         binding.btnTeamB.text = "TEAM B"
