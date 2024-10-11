@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Header Image -->
         <ImageView
             android:id="@+id/imageViewTeams"
             android:layout_width="match_parent"
@@ -19,7 +18,6 @@
             android:scaleType="centerCrop"
             android:src="@drawable/valorant" />
 
-        <!-- First Member -->
         <TextView
             android:id="@+id/txtTeamAName"
             android:layout_width="match_parent"
@@ -43,7 +41,6 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <!-- Avatar -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageViewAvatar1"
                 android:layout_width="70dp"
@@ -52,7 +49,6 @@
                 android:src="@drawable/capt"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
-            <!-- Player Info -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +71,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Second Member -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +78,6 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <!-- Avatar -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageViewAvatar2"
                 android:layout_width="70dp"
@@ -92,7 +86,6 @@
                 android:src="@drawable/ironman"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
-            <!-- Player Info -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -115,7 +108,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Third Member -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,7 +115,6 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <!-- Avatar -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageViewAvatar3"
                 android:layout_width="70dp"
@@ -132,7 +123,6 @@
                 android:src="@drawable/strange"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
 
-            <!-- Player Info -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

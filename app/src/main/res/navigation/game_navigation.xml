@@ -36,8 +36,8 @@
     <fragment
         android:id="@+id/membersFragment"
         android:name="com.ubaya.lulusgaming.view.MembersFragment"
-        android:label="fragment_members"
-        tools:layout="@layout/fragment_members" >
+        android:label="Team Members"
+        tools:layout="@layout/fragment_members">
         <action
             android:id="@+id/action_membersFragment_to_teamsFragment"
             app:destination="@id/teamsFragment" />
