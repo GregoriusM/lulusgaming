@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.ubaya.lulusgaming.R
 import com.ubaya.lulusgaming.databinding.ActivityMainBinding
 
+//ALL DONE
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
