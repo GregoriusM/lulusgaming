@@ -79,16 +79,34 @@
         android:label="Our Schedule"
         tools:layout="@layout/fragment_schedule_list">
         <action
-            android:id="@+id/actionScheduleDetail"
+            android:id="@+id/action_itemSchedule_to_scheduleDetailFragment"
             app:destination="@id/scheduleDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/scheduleDetailFragment"
         android:name="com.ubaya.lulusgaming.view.ScheduleDetailFragment"
-        android:label="fragment_schedule_detail"
+        android:label="Schedule Detail"
         tools:layout="@layout/fragment_schedule_detail" >
         <action
-            android:id="@+id/actionScheduleListe"
+            android:id="@+id/action_scheduleDetailFragment_to_itemSchedule"
             app:destination="@id/itemSchedule" />
+        <argument
+            android:name="eventName"
+            app:argType="string" />
+        <argument
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="team"
+            app:argType="string" />
+        <argument
+            android:name="eventDesc"
+            app:argType="string" />
+        <argument
+            android:name="urlEvent"
+            app:argType="string" />
     </fragment>
 </navigation>

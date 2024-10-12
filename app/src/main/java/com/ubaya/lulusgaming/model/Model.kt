@@ -3,12 +3,15 @@ package com.ubaya.lulusgaming.model
 import java.io.Serializable
 
 data class Schedule(
-    var venue:String?,
+    var date:String?,
+    var month:String?,
     var eventName:String?,
     var gameName:String?,
-    var datetime:String?,
-    var description:String?,
-    var team:String?
+    var team:String?,
+    var location:String?,
+    var time:String?,
+    var eventDesc:String?,
+    var urlEvent:String?
 )
 
 data class Game(

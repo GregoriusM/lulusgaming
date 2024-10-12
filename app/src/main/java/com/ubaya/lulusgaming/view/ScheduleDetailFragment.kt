@@ -1,60 +1,84 @@
 package com.ubaya.lulusgaming.view
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ubaya.lulusgaming.R
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.squareup.picasso.Picasso
+import com.ubaya.lulusgaming.databinding.FragmentScheduleDetailBinding
+import com.ubaya.lulusgaming.model.Game
+import com.ubaya.lulusgaming.model.Schedule
+import com.ubaya.lulusgaming.viewmodel.ScheduleDetailViewModel
+import com.ubaya.lulusgaming.viewmodel.ScheduleListViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ScheduleDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ScheduleDetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentScheduleDetailBinding
+    private lateinit var viewModel:ScheduleDetailViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var schedule:Schedule
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentScheduleDetailBinding.inflate(layoutInflater, container,false)
+        return binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule_detail, container, false)
+//        return inflater.inflate(R.layout.fragment_schedule_detail, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScheduleDetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleDetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val eventName = arguments?.getString("eventName")
+        val location = arguments?.getString("location")
+        val time = arguments?.getString("time")
+        val team = arguments?.getString("team")
+        val eventDesc = arguments?.getString("eventDesc")
+        val urlEvent = arguments?.getString("urlEvent")
+
+        schedule = Schedule(null, null, eventName, null, team, location, time,eventDesc,urlEvent)
+
+        viewModel = ViewModelProvider(this).get(ScheduleDetailViewModel::class.java)
+        viewModel.fetch(schedule)
+
+        observeViewModel()
+
+        binding.btnNotify.setOnClickListener {
+            showNotif()
+        }
+
+
+
     }
+
+    fun observeViewModel() {
+        viewModel.scheduleLD.observe(viewLifecycleOwner, Observer {
+            binding.txtNamaKegiatan.setText(it.eventName)
+            binding.txtTempatWaktu.setText("${it.location} (${it.time})")
+            binding.txtNamaTeamLomba.setText(it.team)
+            binding.txtDeskripsiLomba.setText(it.eventDesc)
+
+            Picasso.get()
+                .load(it.urlEvent)
+                .into(binding.imageVenue)
+        })
+    }
+
+    fun showNotif() {
+        val builder = AlertDialog.Builder(requireContext())
+        val dialog = builder.setMessage("Notification created.")
+            .create()
+
+        dialog.show()
+
+    }
+
 }

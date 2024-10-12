@@ -5,56 +5,72 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ubaya.lulusgaming.R
+import com.ubaya.lulusgaming.databinding.FragmentScheduleListBinding
+import com.ubaya.lulusgaming.viewmodel.ScheduleListViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ScheduleListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ScheduleListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentScheduleListBinding
+    private lateinit var viewModel: ScheduleListViewModel
+    private val scheduleListAdapter = ScheduleListAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentScheduleListBinding.inflate(inflater,container,false)
+        return binding.root
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule_list, container, false)
+        //        return inflater.inflate(R.layout.fragment_schedule_list, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScheduleListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(this).get(ScheduleListViewModel::class.java)
+        viewModel.refresh()
+
+        binding.recViewSchedule.layoutManager = LinearLayoutManager(context)
+        binding.recViewSchedule.adapter = scheduleListAdapter
+
+        observeViewModel()
+
+        binding.refreshLayout.setOnRefreshListener {
+            binding.recViewSchedule.visibility = View.GONE
+            binding.txtErrorSchedule.visibility = View.GONE
+            binding.progressLoadSchedule.visibility = View.VISIBLE
+            viewModel.refresh()
+            binding.refreshLayout.isRefreshing = false
+        }
     }
+
+    fun observeViewModel(){
+        viewModel.scheduleLD.observe(viewLifecycleOwner, Observer {
+            scheduleListAdapter.updateScheduleList(it)
+        })
+
+        viewModel.scheduleLoadErrorLD.observe(viewLifecycleOwner, Observer {
+            if(it == true){
+                binding.txtErrorSchedule?.visibility = View.VISIBLE
+            }else{
+                binding.txtErrorSchedule?.visibility = View.GONE
+            }
+        })
+
+        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
+            if(it == true){
+                binding.recViewSchedule.visibility = View.GONE
+                binding.progressLoadSchedule.visibility = View.VISIBLE
+            }else{
+                binding.recViewSchedule.visibility = View.VISIBLE
+                binding.progressLoadSchedule.visibility = View.GONE
+            }
+        })
+    }
+
+
+
 }
