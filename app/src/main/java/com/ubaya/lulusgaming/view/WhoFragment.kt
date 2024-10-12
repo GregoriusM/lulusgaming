@@ -32,7 +32,7 @@ class WhoFragment : Fragment() {
                 "Mereka berdua ialah Mahasiswa Teknik Informatika Universitas Surabaya (UBAYA)."
 
         Picasso.get()
-            .load(R.drawable.teams)
+            .load(R.drawable.duo)
             .into(binding.imageViewTeams)
 
         binding.btnLike.text = "${whoViewModel.like}"
