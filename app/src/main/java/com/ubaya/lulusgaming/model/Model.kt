@@ -1,5 +1,8 @@
 package com.ubaya.lulusgaming.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
 data class Schedule(
@@ -26,3 +29,18 @@ data class Achievement(
     var year:String?,
     var team: String?
 ) : Serializable
+
+@Entity
+data class Account(
+    @ColumnInfo(name = "firstName")
+    var firstName:String,
+    @ColumnInfo(name = "lastName")
+    var lastName:String,
+
+    @PrimaryKey
+    @ColumnInfo(name = "username")
+    var username:String,
+
+    @ColumnInfo(name = "password")
+    var password:String,
+)

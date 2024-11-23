@@ -45,6 +45,7 @@ class AchievementFragment : Fragment() {
             .load(selectedGame.photoUrl)
             .into(binding.imageViewAchievements)
 
+        //default
         achievementListAdapter.updateAchievementList(selectedGame.achievements)
 
         val years = selectedGame.achievements.mapNotNull { it.year?.toIntOrNull() }.distinct().sorted()
@@ -67,6 +68,7 @@ class AchievementFragment : Fragment() {
 
             binding.refreshLayout.isRefreshing = false
         }
+
         binding.spinnerYear.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,

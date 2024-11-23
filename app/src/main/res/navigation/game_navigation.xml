@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/game_navigation"
-    app:startDestination="@id/itemWhat">
+    app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_membersFragment_to_teamsFragment"
             app:destination="@id/teamsFragment" />
+        <action
+            android:id="@+id/action_membersFragment_to_nameMembersFragment"
+            app:destination="@id/nameMembersFragment" />
     </fragment>
     <fragment
         android:id="@+id/teamsFragment"
@@ -66,6 +69,9 @@
         <action
             android:id="@+id/actionTeamsFragment"
             app:destination="@id/teamsFragment" />
+        <action
+            android:id="@+id/actionSignOut"
+            app:destination="@id/signInFragment" />
 
     </fragment>
     <fragment
@@ -108,5 +114,38 @@
         <argument
             android:name="urlEvent"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nameMembersFragment"
+        android:name="com.ubaya.lulusgaming.view.NameMembersFragment"
+        android:label="Name Members (UTS)"
+        tools:layout="@layout/fragment_name_members">
+        <action
+            android:id="@+id/action_nameMembersFragment_to_membersFragment"
+            app:destination="@id/membersFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.ubaya.lulusgaming.view.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/actionSignUp"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/actionItemWhat"
+            app:destination="@id/itemWhat" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.ubaya.lulusgaming.view.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/actionSignIn"
+            app:destination="@id/signInFragment" />
     </fragment>
 </navigation>
