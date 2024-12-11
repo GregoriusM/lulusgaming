@@ -33,13 +33,7 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)?.visibility = View.GONE
-
-        checkLoginStatus()
-
         viewmodel = ViewModelProvider(this).get(SignUpViewModel::class.java)
-
-        observeViewModel()
 
         binding.btnSignUp.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.actionSignUp)
@@ -49,21 +43,21 @@ class SignInFragment : Fragment() {
             val username = binding.inputLoginUsername.text.toString()
             val password = binding.inputLoginPassword.text.toString()
 
-            if(username.isBlank() || password.isBlank()) {
-                Toast.makeText(view.context, "username dan password harus diisi", Toast.LENGTH_LONG).show()
+            if (username.isBlank() || password.isBlank()) {
+                Toast.makeText(requireContext(), "Username dan password harus diisi", Toast.LENGTH_SHORT).show()
             } else {
                 viewmodel.verifyAccount(username, password)
             }
         }
+
+        observeViewModel()
 
     }
 
     private fun observeViewModel() {
         viewmodel.accountLD.observe(viewLifecycleOwner) { account ->
             if (account != null) {
-
                 saveLoginStatus(true)
-
                 Toast.makeText(requireContext(), "Login berhasil", Toast.LENGTH_SHORT).show()
                 Navigation.findNavController(binding.root).navigate(R.id.actionItemWhat)
             } else {
@@ -72,21 +66,21 @@ class SignInFragment : Fragment() {
         }
     }
 
+//    private fun saveLoginStatus(isLoggedIn: Boolean) {
+//        val sharedPreferences = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+//        with(sharedPreferences.edit()) {
+//            putBoolean(KEY_LOGGED_IN, isLoggedIn)
+//            apply()
+//        }
+//    }
+
     private fun saveLoginStatus(isLoggedIn: Boolean) {
-        val sharedPreferences = activity?.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val editor = sharedPreferences?.edit()
-        editor?.putBoolean(KEY_LOGGED_IN, isLoggedIn)
-        editor?.apply()
+        val sharedPreferences = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean(KEY_LOGGED_IN, isLoggedIn)
+        editor.apply()
     }
 
-    private fun checkLoginStatus() {
-        val sharedPreferences = activity?.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val isLoggedIn = sharedPreferences?.getBoolean(KEY_LOGGED_IN, false) ?: false
-
-        if (isLoggedIn) {
-            Navigation.findNavController(binding.root).navigate(R.id.actionItemWhat)
-        }
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

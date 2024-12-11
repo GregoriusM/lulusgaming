@@ -52,6 +52,10 @@ class SignUpFragment : Fragment() {
             binding.btnSubmit.isEnabled = isChecked
         }
 
+        binding.btnBack.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.actionSignIn)
+        }
+
         binding.btnSubmit.setOnClickListener {
             val firstName = binding.inputFirstName.text.toString()
             val lastName = binding.inputLastName.text.toString()

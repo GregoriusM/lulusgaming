@@ -130,8 +130,8 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.ubaya.lulusgaming.view.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        android:label="Lulus Gaming App"
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/actionSignUp"
             app:destination="@id/signUpFragment" />
@@ -142,8 +142,8 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.ubaya.lulusgaming.view.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
+        android:label="Lulus Gaming App"
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/actionSignIn"
             app:destination="@id/signInFragment" />
