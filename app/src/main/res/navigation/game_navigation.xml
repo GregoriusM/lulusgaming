@@ -72,6 +72,9 @@
         <action
             android:id="@+id/actionSignOut"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/actionApplyTeam"
+            app:destination="@id/itemApplyTeam" />
 
     </fragment>
     <fragment
@@ -147,5 +150,26 @@
         <action
             android:id="@+id/actionSignIn"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemApplyTeam"
+        android:name="com.ubaya.lulusgaming.view.ApplyTeamFragment"
+        android:label="Apply Team"
+        tools:layout="@layout/fragment_apply_team" >
+        <action
+            android:id="@+id/action_itemApplyTeam_to_addTeamFragment"
+            app:destination="@id/addTeamFragment" />
+        <action
+            android:id="@+id/action_itemApplyTeam_to_itemWhat"
+            app:destination="@id/itemWhat" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTeamFragment"
+        android:name="com.ubaya.lulusgaming.view.AddTeamFragment"
+        android:label="fragment_add_team"
+        tools:layout="@layout/fragment_add_team" >
+        <action
+            android:id="@+id/action_addTeamFragment_to_itemApplyTeam"
+            app:destination="@id/itemApplyTeam" />
     </fragment>
 </navigation>

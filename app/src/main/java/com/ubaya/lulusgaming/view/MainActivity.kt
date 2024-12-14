@@ -44,19 +44,32 @@ class MainActivity : AppCompatActivity() {
         val isLoggedIn = sharedPreferences.getBoolean(KEY_LOGGED_IN, false)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.signInFragment || destination.id == R.id.signUpFragment) {
-                binding.bottomNav.visibility = View.GONE
-                supportActionBar?.setDisplayHomeAsUpEnabled(false)
-            } else {
-                binding.bottomNav.visibility = View.VISIBLE
-                supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            when {
+                destination.id == R.id.signInFragment || destination.id == R.id.signUpFragment -> {
+                    binding.bottomNav.visibility = View.GONE
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                }
+                destination.id == R.id.itemApplyTeam -> {
+                    binding.bottomNav.visibility = View.GONE
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                }
+                else -> {
+                    binding.bottomNav.visibility = View.VISIBLE
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+                }
             }
         }
+
 
         binding.navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.itemLogOut -> {
                     logOut()
+                    true
+                }
+                R.id.itemApplyTeam -> {
+                    navController.navigate(R.id.itemApplyTeam)
+                    binding.drawerLayout.closeDrawers()
                     true
                 }
                 else -> {

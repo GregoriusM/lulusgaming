@@ -44,3 +44,18 @@ data class Account(
     @ColumnInfo(name = "password")
     var password:String,
 )
+
+@Entity
+data class ApplyTeam(
+    @ColumnInfo(name = "namaGame")
+    var namaGame:String,
+    @ColumnInfo(name = "namaTeam")
+    var namaTeam:String,
+    @ColumnInfo(name = "status")
+    var status:String,
+    @ColumnInfo(name = "description")
+    var description:String,
+){
+    @PrimaryKey(autoGenerate = true)
+    var uuid:Int = 0
+}
