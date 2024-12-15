@@ -154,8 +154,8 @@
     <fragment
         android:id="@+id/itemApplyTeam"
         android:name="com.ubaya.lulusgaming.view.ApplyTeamFragment"
-        android:label="Apply Team"
-        tools:layout="@layout/fragment_apply_team" >
+        android:label="Proposal List"
+        tools:layout="@layout/fragment_apply_team">
         <action
             android:id="@+id/action_itemApplyTeam_to_addTeamFragment"
             app:destination="@id/addTeamFragment" />
@@ -166,8 +166,8 @@
     <fragment
         android:id="@+id/addTeamFragment"
         android:name="com.ubaya.lulusgaming.view.AddTeamFragment"
-        android:label="fragment_add_team"
-        tools:layout="@layout/fragment_add_team" >
+        android:label="Apply Team"
+        tools:layout="@layout/fragment_add_team">
         <action
             android:id="@+id/action_addTeamFragment_to_itemApplyTeam"
             app:destination="@id/itemApplyTeam" />
