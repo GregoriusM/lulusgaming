@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.ubaya.lulusgaming.util.APPLY_TEAM_DB_NAME
 import com.ubaya.lulusgaming.util.DB_NAME
 
 @Database(entities = arrayOf(ApplyTeam::class), version = 1)
@@ -16,7 +17,7 @@ abstract class ApplyTeamDatabase:RoomDatabase() {
 
         fun buildDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext, ApplyTeamDatabase::class.java,
-            DB_NAME)
+            APPLY_TEAM_DB_NAME)
             .build()
 
         operator fun invoke(context: Context){

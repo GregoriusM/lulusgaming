@@ -5,6 +5,7 @@ import com.ubaya.lulusgaming.model.AccountDatabase
 import com.ubaya.lulusgaming.model.ApplyTeamDatabase
 
 val DB_NAME = "lulusgamingdb"
+val APPLY_TEAM_DB_NAME = "apply_team_db"
 
 fun buildDb(context: Context):AccountDatabase{
     val db = AccountDatabase.buildDatabase(context)
