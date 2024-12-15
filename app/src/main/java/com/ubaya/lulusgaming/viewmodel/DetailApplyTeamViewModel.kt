@@ -16,7 +16,7 @@ class DetailApplyTeamViewModel(application: Application):
 
     private val job = Job()
 
-    val todoLD = MutableLiveData<ApplyTeam>()
+    val applyTeamLD = MutableLiveData<ApplyTeam>()
 
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.IO

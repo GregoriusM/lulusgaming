@@ -1,6 +1,7 @@
 package com.ubaya.lulusgaming.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,6 +34,10 @@ class AddTeamFragment : Fragment(),  ApplyEditClickListener{
         viewmodel = ViewModelProvider(this)
             .get(DetailApplyTeamViewModel::class.java)
 
+        binding.applyTeam = ApplyTeam("", "", "", "")
+        binding.addlistener = this
+
+
 
 //        binding.btnApply.setOnClickListener {
 //            var apply = ApplyTeam(
@@ -46,7 +51,7 @@ class AddTeamFragment : Fragment(),  ApplyEditClickListener{
             "Nama Game",
             "Team A",
             "ACCEPT",
-            "DESC"
+            binding.txtDescription.text.toString()
         )
 
         val list = listOf(applyTeam)

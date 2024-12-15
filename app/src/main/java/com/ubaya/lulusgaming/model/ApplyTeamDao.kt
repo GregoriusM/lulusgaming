@@ -17,6 +17,9 @@ interface ApplyTeamDao {
     @Query("SELECT * FROM applyteam WHERE uuid = :id")
     fun selectApplyTeam(id:Int): ApplyTeam
 
+    @Query("DELETE FROM applyteam")
+    fun deleteAll()
+
     @Delete
     fun deleteApplyTeam(apply: ApplyTeam)
 }

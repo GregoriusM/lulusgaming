@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                     binding.bottomNav.visibility = View.GONE
                     supportActionBar?.setDisplayHomeAsUpEnabled(false)
                 }
-                destination.id == R.id.itemApplyTeam -> {
+                destination.id == R.id.itemApplyTeam || destination.id == R.id.addTeamFragment-> {
                     binding.bottomNav.visibility = View.GONE
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
