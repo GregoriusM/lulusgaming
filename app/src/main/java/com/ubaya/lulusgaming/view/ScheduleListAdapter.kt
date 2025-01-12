@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso
 import com.ubaya.lulusgaming.databinding.ScheduleListItemBinding
 import com.ubaya.lulusgaming.model.Schedule
 
+//CHANGE TO DATA BINDING
 class ScheduleListAdapter (val scheduleList:ArrayList<Schedule>): RecyclerView.Adapter<ScheduleListAdapter.ScheduleViewHolder>() {
         class ScheduleViewHolder(var binding:ScheduleListItemBinding): RecyclerView.ViewHolder(binding.root)
 
