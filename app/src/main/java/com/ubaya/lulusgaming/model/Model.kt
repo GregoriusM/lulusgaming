@@ -28,7 +28,11 @@ data class Achievement(
     var tournament:String?,
     var year:String?,
     var team: String?
-) : Serializable
+) : Serializable {
+    override fun toString(): String {
+        return "$tournament ($year) - $team"
+    }
+}
 
 @Entity
 data class Account(

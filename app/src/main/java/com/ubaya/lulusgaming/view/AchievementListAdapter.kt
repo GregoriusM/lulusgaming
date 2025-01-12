@@ -7,7 +7,8 @@ import com.ubaya.lulusgaming.databinding.AchievementListItemBinding
 import com.ubaya.lulusgaming.model.Achievement
 import com.ubaya.lulusgaming.model.Game
 
-class AchievementListAdapter(val achievementList:ArrayList<Achievement>):RecyclerView.Adapter<AchievementListAdapter.AchievementViewHolder>() {
+class AchievementListAdapter(val achievementList:ArrayList<Achievement>):
+    RecyclerView.Adapter<AchievementListAdapter.AchievementViewHolder>() {
     class AchievementViewHolder(val binding: AchievementListItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AchievementViewHolder {
@@ -17,12 +18,14 @@ class AchievementListAdapter(val achievementList:ArrayList<Achievement>):Recycle
     }
 
     override fun onBindViewHolder(holder: AchievementViewHolder, position: Int) {
+        holder.binding.achievement = achievementList[position]
+        holder.binding.position = position
 //        holder.binding.txtTournamentName.text = achievementList[position].tournament
 //        holder.binding.txtYear.text = achievementList[position].year
 //        holder.binding.txtTeam.text = achievementList[position].team
 
-        val display = "${position + 1}. ${achievementList[position].tournament} (${achievementList[position].year}) - ${achievementList[position].team}"
-        holder.binding.txtAchievementGame.text = display
+//        val display = "${position + 1}. ${achievementList[position].tournament} (${achievementList[position].year}) - ${achievementList[position].team}"
+//        holder.binding.txtAchievementGame.text = display
     }
 
     override fun getItemCount(): Int {
