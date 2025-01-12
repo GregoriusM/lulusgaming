@@ -7,6 +7,7 @@ import com.ubaya.lulusgaming.databinding.AchievementListItemBinding
 import com.ubaya.lulusgaming.model.Achievement
 import com.ubaya.lulusgaming.model.Game
 
+//DONE DATA BINDING
 class AchievementListAdapter(val achievementList:ArrayList<Achievement>):
     RecyclerView.Adapter<AchievementListAdapter.AchievementViewHolder>() {
     class AchievementViewHolder(val binding: AchievementListItemBinding) : RecyclerView.ViewHolder(binding.root)
