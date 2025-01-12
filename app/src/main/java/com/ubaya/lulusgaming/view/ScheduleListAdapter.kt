@@ -24,23 +24,37 @@ class ScheduleListAdapter (val scheduleList:ArrayList<Schedule>): RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
+//        holder.binding.schedule = scheduleList[position]
 
-        holder.binding.txtTanggal.text = scheduleList[position].date
-        holder.binding.txtBulan.text = scheduleList[position].month
-        holder.binding.txtKegiatan.text = scheduleList[position].eventName
+        val schedule = scheduleList[position]
+        holder.binding.schedule = schedule
+//        holder.binding.txtTanggal.text = scheduleList[position].date
+//        holder.binding.txtBulan.text = scheduleList[position].month
+//        holder.binding.txtKegiatan.text = scheduleList[position].eventName
+//
+//        val cabangTeam = "${scheduleList[position].gameName} - ${scheduleList[position].team}"
+//        holder.binding.txtCabangTeam.text = cabangTeam
+//
+//        val eventName = scheduleList[position].eventName
+//        val location = scheduleList[position].location
+//        val time = scheduleList[position].time
+//        val team = scheduleList[position].team
+//        val eventDesc = scheduleList[position].eventDesc
+//        val urlEvent = scheduleList[position].urlEvent
 
-        val cabangTeam = "${scheduleList[position].gameName} - ${scheduleList[position].team}"
-        holder.binding.txtCabangTeam.text = cabangTeam
-
-        val eventName = scheduleList[position].eventName
-        val location = scheduleList[position].location
-        val time = scheduleList[position].time
-        val team = scheduleList[position].team
-        val eventDesc = scheduleList[position].eventDesc
-        val urlEvent = scheduleList[position].urlEvent
-
+//        holder.itemView.setOnClickListener {
+//            val action = ScheduleListFragmentDirections.actionItemScheduleToScheduleDetailFragment(eventName!!,location!!,time!!,team!!,eventDesc!!,urlEvent!!)
+//            it.findNavController().navigate(action)
+//        }
         holder.itemView.setOnClickListener {
-            val action = ScheduleListFragmentDirections.actionItemScheduleToScheduleDetailFragment(eventName!!,location!!,time!!,team!!,eventDesc!!,urlEvent!!)
+            val action = ScheduleListFragmentDirections.actionItemScheduleToScheduleDetailFragment(
+                schedule.eventName ?: "",
+                schedule.location ?: "",
+                schedule.time ?: "",
+                schedule.team ?: "",
+                schedule.eventDesc ?: "",
+                schedule.urlEvent ?: ""
+            )
             it.findNavController().navigate(action)
         }
 

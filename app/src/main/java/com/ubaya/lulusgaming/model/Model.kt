@@ -15,7 +15,13 @@ data class Schedule(
     var time:String?,
     var eventDesc:String?,
     var urlEvent:String?
-)
+){
+    override fun toString(): String{
+        return "$gameName - $team"
+    }
+}
+
+
 
 data class Game(
     var name:String?,
